@@ -1,6 +1,6 @@
 # Wardrobe AI
 
-The latest Wardrobe AI project source is included in [`Wardrobe-AI-Source.zip`](./Wardrobe-AI-Source.zip).
+The latest Wardrobe AI application source is included in [Wardrobe-AI-Source.zip](./Wardrobe-AI-Source.zip).
 
 ## Run locally
 
@@ -13,6 +13,14 @@ npm install
 npm run dev
 ```
 
+## GitHub Pages deployment
+
+The repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml`. On pushes to `main`, it extracts the source archive, installs dependencies, builds the app using the `/WARDROBE-AI/` base path, and deploys the generated `dist` directory to GitHub Pages.
+
+One-time repository setup: open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. Then open **Actions** and confirm the “Deploy Wardrobe AI to GitHub Pages” workflow is enabled.
+
+Public site URL: https://mourya-2007.github.io/WARDROBE-AI/
+
 ## Included features
 
 - Apple-inspired landing page with animated text marquee and rotating fashion imagery.
@@ -23,3 +31,10 @@ npm run dev
 - Responsive layouts and motion-aware styling.
 
 The outfit suggestions are currently sample recommendations from the project; a live AI styling API is not connected.
+
+## Production build
+
+```bash
+npm run build -- --base=/WARDROBE-AI/
+npm run preview
+```
