@@ -1,21 +1,23 @@
 # Wardrobe AI
 
-The current Wardrobe AI application source is provided in [Wardrobe-AI-Source.tar.xz](./Wardrobe-AI-Source.tar.xz).
+Wardrobe AI is a React + Vite personal wardrobe and outfit-styling prototype.
 
 ## Run locally
 
-1. Download and extract `Wardrobe-AI-Source.tar.xz`.
-2. Open the extracted `wardrobe-ai-optimized` folder in your terminal.
-3. Install dependencies and start Vite:
+Clone this repository and extract the bundled source into the working tree:
 
 ```bash
+git clone https://github.com/mourya-2007/WARDROBE-AI.git
+cd WARDROBE-AI
+bash scripts/export-source.sh
+cd wardrobe-ai-optimized
 npm install
 npm run dev
 ```
 
 ## GitHub Pages
 
-The site is deployed automatically by the GitHub Actions workflow in `.github/workflows/deploy.yml`. The workflow extracts the source archive, installs dependencies, builds the Vite app with the repository base path `/WARDROBE-AI/`, and deploys the `dist` folder.
+The site is deployed automatically by the GitHub Actions workflow in `.github/workflows/deploy.yml`. The workflow reconstructs and validates the bundled source archive, installs dependencies, builds the Vite app with the repository base path `/WARDROBE-AI/`, and deploys the generated `dist` directory.
 
 **One-time repository setting:** open **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**. Then open the **Actions** tab and check the “Deploy Wardrobe AI to GitHub Pages” workflow.
 
