@@ -32,7 +32,22 @@ jobs:
 
       - name: Reassemble and validate app source
         run: |
-          cat .github/source-archive/part-*.b64 | base64 --decode > /tmp/wardrobe-ai-source.tar.xz
+          cat .github/source-archive/part-01.b64 \
+            .github/source-archive/part-01a.b64 \
+            .github/source-archive/part-02.b64 \
+            .github/source-archive/part-03.b64 \
+            .github/source-archive/part-04.b64 \
+            .github/source-archive/part-05a.b64 \
+            .github/source-archive/part-05b.b64 \
+            .github/source-archive/part-05c.b64 \
+            .github/source-archive/part-05d1.b64 \
+            .github/source-archive/part-05d2.b64 \
+            .github/source-archive/part-05d3.b64 \
+            .github/source-archive/part-05d4.b64 \
+            .github/source-archive/part-06.b64 \
+            .github/source-archive/part-07.b64 \
+            .github/source-archive/part-08.b64 \
+            .github/source-archive/part-09.b64 | base64 --decode > /tmp/wardrobe-ai-source.tar.xz
           xz -t /tmp/wardrobe-ai-source.tar.xz
           mkdir -p app
           tar -xJf /tmp/wardrobe-ai-source.tar.xz -C app
